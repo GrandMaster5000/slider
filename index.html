@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./index.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="swiper">
+            <div class="swiper-pagination"></div>
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <div class="text">
+                        <h3 class="number_slide">1</h3>
+                        <h4 class="title_slide">Нативный пост</h4>
+                        <div class="descr_slide">Блогер делает нативный пост с подборкой товаров</div>
+                    </div>
+                    <img src="./image/Rectangle 17.png" alt="img">
+                </div>
+                <div class="swiper-slide">
+                    <div class="text"></div>
+                    <img src="./image/Rectangle 79.png" alt="img">
+                </div>
+                <div class="swiper-slide">
+                    <div class="text"></div>
+                    <img src="./image/Rectangle 17.png" alt="img">
+                </div>
+                <div class="swiper-slide">
+                    <div class="text"></div>
+                    <img src="./image/Rectangle 79.png" alt="img">
+                </div>
+            </div>    
+        </div>
+    </div>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script type="module">
+        import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
+
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            centeredSlides: true,
+            longSwipes: false,
+            spaceBetween: 15
+        });
+    </script>
+</body>
+</html>
