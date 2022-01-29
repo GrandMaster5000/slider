@@ -25,6 +25,7 @@
         .container-big {
             padding-top: 40px;
             background-color: black;
+            position: relative;
         }
         .big-swiper {
             width: 345px;
@@ -99,6 +100,13 @@
             justify-content: center;
         }
 
+        .bg-bottom-img {
+            position: absolute;
+            bottom: 0;
+            height: 120px;
+            width: 100%;
+            background-image: url('./image/Gradient\ 01_mobile.jpg');
+        }
     </style>
     <div class="container-big">
         <div class="big-swiper">
@@ -136,6 +144,7 @@
                 </div>
             </div>    
         </div>
+        <div class="bg-bottom-img"></div>
     </div>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script type="module">
