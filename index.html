@@ -10,6 +10,13 @@
     <style>
         @import url('https://unpkg.com/swiper@7/swiper-bundle.min.css');
         @font-face {
+            font-family: 'Benzin';
+            src: url('http://yoursite.com/gerbera/Gerbera-Medium.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
             font-family: 'Ubuntu';
             src: url('http://yoursite.com/gerbera/Gerbera-Bold.woff') format('woff');
             font-weight: 700;
@@ -19,159 +26,136 @@
             padding-top: 50px;
             background-color: black;
         }
-        .swiper {
+        .big-swiper {
             width: 345px;
-            height: 102px;
-            padding-top: 20px;
+            height: 750px;
         }
 
         .swiper-pagination-class {
-            top: -10px;
-        }
-
-        .swiper-pagination-class :first-child {
-            margin-right: 15px;
+            top: 152px;
         }
 
         .swiper-pagination-bullet {
-            width: 164px;
+            width: 75px;
             height: 3px;
             background-color: #BFBFBF;
             border: none;
             border-radius: 0%;
-            border-radius: 5px;
+            margin: 0 4px;
         }
         .swiper-pagination-bullet-active {
             background-color: #FF00CC !important;
         }
 
-        .swp-story-img-wrp {
-            background-image: url('https://thumb.tildacdn.com/tild3839-6632-4239-b130-633263396336/-/cover/240x240/center/center//inst_circle.png');
-            background-size: 75px, 75px;
-            width: 75px;
-            height: 79px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-repeat: no-repeat;
+        .text-container {
+            width: 255px;
+            opacity: 0;
+            transition: opacity .4s;
+            height: 0;
+            visibility: hidden;
         }
 
-        .swp-storys {
-            display: flex;
-            gap: 15px;
+        .active-text {
+            opacity: 1;
+            visibility: visible;
+            height: auto;
         }
 
-        .swp-story-text {
-            font-family: Ubuntu;
+        .text-number {
+            color: #FFFFFF;
+            font-family: Benzin;
             font-weight: bold;
-            font-size: 14px;
-            margin-top: 10px;
-            text-align: center;
-            color: #fff
+            font-size: 20px;
+            margin-bottom: 20px;
         }
-        .cyrcle-img {
-            width: 62.5px;
-            height: 62.5px;
-            border-radius: 50%;
+
+        .text-title {
+            color: #FFFFFF;
+            font-family: Benzin;
+            font-weight: normal;
+            font-size: 20px;
+            margin-bottom: 20px;
         }
+
+        .text-descr {
+            font-family: Ubuntu;
+            font-weight: normal;
+            font-size: 16px;
+            color: #BFBFBF;
+            margin-bottom: 64px;
+        }
+
     </style>
     <div class="container">
-        <div class="swiper">
+        <div class="swiper big-swiper">
+            <div class="texts-container">
+                <div id="firstText" class="text-container active-text">
+                    <div class="text-number">1</div>
+                    <h3 class="text-title">Нативный пост</h3>
+                    <div class="text-descr">Блогер делает нативный постс подборкой товаров</div>
+                </div>
+                <div id="secondText" class="text-container">
+                    <div class="text-number">2</div>
+                    <h3 class="text-title">Витрина блогера</h3>
+                    <div class="text-descr">Подписчики переходят по ссылке в шапке профиля в витрину блогера</div>
+                </div>
+                <div id="thirdText" class="text-container">
+                    <div class="text-number">3</div>
+                    <h3 class="text-title">Переход в магазин</h3>
+                    <div class="text-descr">В витрине находят образ, кликают на товар и переходят в магазин</div>
+                </div>
+                <div id="fourthText" class="text-container">
+                    <div class="text-number">4</div>
+                    <h3 class="text-title">Заказ товаров</h3>
+                    <div class="text-descr">Выбирают размер и делают заказ в магазине</div>
+                </div>
+            </div>
+            <div class="swiper-pagination swiper-pagination-class"></div>
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                   <div class='swp-storys'>
-                        <div class="swp-story-wrapper">
-                            <div class="swp-story-img-wrp">
-                                <a href="https://instagram.com/poli_ryzhova/">
-                                    <img class="cyrcle-img" src="https://thumb.tildacdn.com/tild3038-3131-4036-b565-613837303663/-/format/webp/242303233_2708430756.jpg" alt="story">
-                                </a>
-                            </div>
-                            <div class="swp-story-text">756k</div>
-                        </div>
-                        <div class="swp-story-wrapper">
-                            <div class="swp-story-img-wrp">
-                                <a href="https://instagram.com/elennne/">
-                                    <img class="cyrcle-img" src="https://thumb.tildacdn.com/tild3565-3161-4631-b339-623739626130/-/format/webp/167821015_3548930092.jpg" alt="story">
-                                </a>
-                            </div>
-                            <div class="swp-story-text">756k</div>
-                        </div>
-                        <div class="swp-story-wrapper">
-                            <div class="swp-story-img-wrp">
-                                <a href="https://instagram.com/medvedevastyle/">
-                                    <img class="cyrcle-img" src="https://thumb.tildacdn.com/tild3433-6132-4033-a139-383939633266/-/format/webp/92061831_17058427401.jpg" alt="story">
-                                </a>
-                            </div>
-                            <div class="swp-story-text">756k</div>
-                        </div>
-                        <div class="swp-story-wrapper">
-                            <div class="swp-story-img-wrp">
-                                <a href="https://instagram.com/epifanova.style/">
-                                    <img class="cyrcle-img" src="https://thumb.tildacdn.com/tild6330-6366-4661-b962-396330383265/-/format/webp/80903017_45405098528.jpg" alt="story">
-                                </a>
-                            </div>
-                            <div class="swp-story-text">756k</div>
-                        </div>
-                   </div>
+                    <img src="./image/Rectangle 17.png" alt="img">
                 </div>
                 <div class="swiper-slide">
-                   <div class='swp-storys'>
-                        <div class="swp-story-wrapper">
-                            <div class="swp-story-img-wrp">
-                                <a href="https://instagram.com/maria_shady/">
-                                    <img class="cyrcle-img" src="https://thumb.tildacdn.com/tild6431-3161-4764-a664-383138303536/-/format/webp/240804312_5179903159.jpg" alt="story">
-                                </a>
-                            </div>
-                            <div class="swp-story-text">756k</div>
-                        </div>
-                        <div class="swp-story-wrapper">
-                            <div class="swp-story-img-wrp">
-                                <a href="https://instagram.com/makovetckaya_ya/">
-                                    <img class="cyrcle-img" src="https://thumb.tildacdn.com/tild6264-3639-4262-a434-353239346236/-/format/webp/271523995_3356807384.jpg" alt="story">
-                                </a>
-                            </div>
-                            <div class="swp-story-text">756k</div>
-                        </div>
-                        <div class="swp-story-wrapper">
-                            <div class="swp-story-img-wrp">
-                                <a href="https://www.instagram.com/tanya_tilcha/">
-                                    <img class="cyrcle-img" src="https://thumb.tildacdn.com/tild3635-6336-4765-a563-653462613264/-/format/webp/163630758_2774644772.jpg" alt="story">
-                                </a>
-                            </div>
-                            <div class="swp-story-text">756k</div>
-                        </div>
-                        <div class="swp-story-wrapper">
-                            <div class="swp-story-img-wrp">
-                                <a href="https://instagram.com/iriglow/">
-                                    <img class="cyrcle-img" src="https://thumb.tildacdn.com/tild3165-6632-4461-b230-396263303464/-/format/webp/159284099_8636036944.jpg" alt="story">
-                                </a>
-                            </div>
-                            <div class="swp-story-text">756k</div>
-                        </div>
-                   </div>
+                    <img src="./image/Rectangle 79.png" alt="img">
                 </div>
-                
+                <div class="swiper-slide">
+                    <img src="./image/Rectangle 17.png" alt="img">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./image/Rectangle 79.png" alt="img">
+                </div>
             </div>    
-            s<div class="swiper-pagination swiper-pagination-class"></div>
         </div>
-
     </div>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script type="module">
         import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
 
         const swiper = new Swiper('.swiper', {
-            // loop: true,
-
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
                 modifierClass: '.swiper-pagination-class'
             },
 
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
             centeredSlides: true,
             longSwipes: false,
             spaceBetween: 15
+        });
+        const firstText = document.querySelector('#firstText')
+        const secondText = document.querySelector('#secondText')
+        const thirdText = document.querySelector('#thirdText')
+        const fourthText = document.querySelector('#fourthText')
+
+        swiper.on('slideChange', function () {
+            const texts = [firstText, secondText, thirdText, fourthText];
+            texts[swiper.previousIndex].classList.remove('active-text')
+            texts[swiper.activeIndex].classList.add('active-text')
         });
     </script>
 </body>
