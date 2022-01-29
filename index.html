@@ -40,18 +40,22 @@
 
         .swiper-pagination-class {
            margin-bottom: 20px;
+           display: flex;
         }
 
-        .swiper-pagination-bullet {
+        .swiper-pagination-bullets {
             width: 75px;
             height: 3px;
-            background-color: #BFBFBF;
             border: none;
             border-radius: 5px;
             margin: 0 4px;
+            cursor: pointer;
+            background-color: #BBC1C3;
+            opacity: .2;
         }
-        .swiper-pagination-bullet-active {
+        .swiper-pagination-bullets-active {
             background-color: #FF00CC !important;
+            opacity: 1;
         }
 
         .text-container {
@@ -141,7 +145,10 @@
             pagination: {
                 el: '.swiper-pagination-class',
                 clickable: true,
-                modifierClass: '.swiper-pagination-class'
+                modifierClass: '.swiper-pagination-class',
+                bulletClass: 'swiper-pagination-bullets',
+                bulletActiveClass: 'swiper-pagination-bullets-active',
+                bulletElement: 'div'
             },
             slideClass: 'swiper-big-slide',
             centeredSlides: true,
