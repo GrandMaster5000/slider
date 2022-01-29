@@ -4,39 +4,156 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./index.css">
     <title>Document</title>
 </head>
 <body>
+    <style>
+        @import url('https://unpkg.com/swiper@7/swiper-bundle.min.css');
+        @font-face {
+            font-family: 'Benzin';
+            src: url('http://yoursite.com/gerbera/Gerbera-Medium.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Ubuntu';
+            src: url('http://yoursite.com/gerbera/Gerbera-Bold.woff') format('woff');
+            font-weight: 700;
+            font-style: bold;
+        }
+        .container {
+            padding: 50px;
+            background-color: black;
+        }
+        .mini-swiper {
+            width: 345px;
+            height: 750px;
+        }
+
+        .swiper-pagination-class {
+            top: 152px;
+        }
+
+        .swiper-pagination-bullet {
+            width: 75px;
+            height: 3px;
+            background-color: #BFBFBF;
+            border: none;
+            border-radius: 0%;
+            margin: 0 4px;
+        }
+        .swiper-pagination-bullet-active {
+            background-color: #FF00CC !important;
+        }
+
+        .text-container {
+            width: 255px;
+            opacity: 0;
+            transition: opacity .5s ease-in-out;
+            height: 0;
+        }
+
+        .active-text {
+            opacity: 1;
+            height: auto;
+        }
+
+        .text-number {
+            color: #FFFFFF;
+            font-family: Benzin;
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .text-title {
+            color: #FFFFFF;
+            font-family: Benzin;
+            font-weight: normal;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .text-descr {
+            font-family: Ubuntu;
+            font-weight: normal;
+            font-size: 16px;
+            color: #BFBFBF;
+            margin-bottom: 64px;
+        }
+
+    </style>
     <div class="container">
-        <div class="swiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><div><img src="./image/Rectangle 17.png" alt="photo"></div></div>
-                <div class="swiper-slide"><img src="./image/Rectangle 79.png" alt="photo"></div>
-                <div class="swiper-slide"><img src="./image/Rectangle 17.png" alt="photo"></div>
+        <div class="swiper mini-swiper">
+            <div class="texts-container">
+                <div id="firstText" class="text-container active-text">
+                    <div class="text-number">1</div>
+                    <h3 class="text-title">Нативный пост</h3>
+                    <div class="text-descr">Блогер делает нативный постс подборкой товаров</div>
+                </div>
+                <div id="secondText" class="text-container">
+                    <div class="text-number">2</div>
+                    <h3 class="text-title">Витрина блогера</h3>
+                    <div class="text-descr">Подписчики переходят по ссылке в шапке профиля в витрину блогера</div>
+                </div>
+                <div id="thirdText" class="text-container">
+                    <div class="text-number">3</div>
+                    <h3 class="text-title">Переход в магазин</h3>
+                    <div class="text-descr">В витрине находят образ, кликают на товар и переходят в магазин</div>
+                </div>
+                <div id="fourthText" class="text-container">
+                    <div class="text-number">4</div>
+                    <h3 class="text-title">Заказ товаров</h3>
+                    <div class="text-descr">Выбирают размер и делают заказ в магазине</div>
+                </div>
             </div>
             <div class="swiper-pagination swiper-pagination-class"></div>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="./image/Rectangle 17.png" alt="img">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./image/Rectangle 79.png" alt="img">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./image/Rectangle 17.png" alt="img">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./image/Rectangle 79.png" alt="img">
+                </div>
+            </div>    
         </div>
-        
     </div>
-
-
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script type="module">
         import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
 
         const swiper = new Swiper('.swiper', {
-            // loop: true,
-
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
                 modifierClass: '.swiper-pagination-class'
             },
 
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
             centeredSlides: true,
             longSwipes: false,
             spaceBetween: 15
+        });
+        const firstText = document.querySelector('#firstText')
+        const secondText = document.querySelector('#secondText')
+        const thirdText = document.querySelector('#thirdText')
+        const fourthText = document.querySelector('#fourthText')
+
+        swiper.on('slideChange', function () {
+            const texts = [firstText, secondText, thirdText, fourthText];
+            texts[swiper.previousIndex].classList.remove('active-text')
+            texts[swiper.activeIndex].classList.add('active-text')
         });
     </script>
 </body>
