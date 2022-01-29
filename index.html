@@ -28,11 +28,11 @@
         }
         .big-swiper {
             width: 345px;
-            height: 750px;
+            height: 810px;
         }
 
         .swiper-pagination-class {
-            top: 152px;
+            top: 118px;
         }
 
         .swiper-pagination-bullet {
@@ -48,25 +48,12 @@
         }
 
         .text-container {
-            width: 255px;
-            opacity: 0;
-            transition: opacity .4s;
-            height: 0;
-            visibility: hidden;
+            width: 345px;
+            display: none;
         }
 
         .active-text {
-            opacity: 1;
-            visibility: visible;
-            height: auto;
-        }
-
-        .text-number {
-            color: #FFFFFF;
-            font-family: Benzin;
-            font-weight: bold;
-            font-size: 20px;
-            margin-bottom: 20px;
+            display: block;
         }
 
         .text-title {
@@ -75,6 +62,8 @@
             font-weight: normal;
             font-size: 20px;
             margin-bottom: 20px;
+            display: flex;
+            gap: 40px;
         }
 
         .text-descr {
@@ -82,13 +71,16 @@
             font-weight: normal;
             font-size: 16px;
             color: #BFBFBF;
-            margin-bottom: 64px;
+            margin-bottom: 40px;
+            line-height: 150%;
+            height: 48px;
         }
 
         .img-gif-slider {
-            width: 255px;
-            height: 552.16px;
+            width: 300px;
+            height: 649.6px;
             border-radius: 20px;
+            margin: 0 23px;
         }
 
     </style>
@@ -96,23 +88,19 @@
         <div class="swiper big-swiper">
             <div class="texts-container">
                 <div id="firstText" class="text-container active-text">
-                    <div class="text-number">1</div>
-                    <h3 class="text-title">Нативный пост</h3>
-                    <div class="text-descr">Блогер делает нативный постс подборкой товаров</div>
+                    <h3 class="text-title"><span>1</span><span>Нативный пост</span></h3>
+                    <div class="text-descr">Блогер делает нативный <br> пост с подборкой товаров</div>
                 </div>
                 <div id="secondText" class="text-container">
-                    <div class="text-number">2</div>
-                    <h3 class="text-title">Витрина блогера</h3>
+                    <h3 class="text-title"><span>2</span><span>Витрина блогера</span></h3>
                     <div class="text-descr">Подписчики переходят по ссылке в шапке профиля в витрину блогера</div>
                 </div>
                 <div id="thirdText" class="text-container">
-                    <div class="text-number">3</div>
-                    <h3 class="text-title">Переход в магазин</h3>
+                    <h3 class="text-title"><span>3</span><span>Переход в магазин</span></h3>
                     <div class="text-descr">В витрине находят образ, кликают на товар и переходят в магазин</div>
                 </div>
                 <div id="fourthText" class="text-container">
-                    <div class="text-number">4</div>
-                    <h3 class="text-title">Заказ товаров</h3>
+                    <h3 class="text-title"><span>4</span><span>Заказ товаров</span></h3>
                     <div class="text-descr">Выбирают размер и делают заказ в магазине</div>
                 </div>
             </div>
