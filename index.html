@@ -22,17 +22,24 @@
             font-weight: 700;
             font-style: bold;
         }
-        .container {
-            padding-top: 50px;
+        .container-big {
+            padding-top: 40px;
             background-color: black;
         }
         .big-swiper {
             width: 345px;
             height: 810px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            overflow: hidden;
+            list-style: none;
+            padding: 0;
+            z-index: 1;
         }
 
         .swiper-pagination-class {
-            top: 100px;
+           margin-bottom: 20px;
         }
 
         .swiper-pagination-bullet {
@@ -40,7 +47,7 @@
             height: 3px;
             background-color: #BFBFBF;
             border: none;
-            border-radius: 0%;
+            border-radius: 5px;
             margin: 0 4px;
         }
         .swiper-pagination-bullet-active {
@@ -71,7 +78,7 @@
             font-weight: normal;
             font-size: 16px;
             color: #BFBFBF;
-            margin-bottom: 40px;
+            margin-bottom: 17px;
             line-height: 150%;
             height: 48px;
         }
@@ -83,9 +90,14 @@
             margin: 0 23px;
         }
 
+        .swiper-big-slide {
+            display: flex;
+            justify-content: center;
+        }
+
     </style>
-    <div class="container">
-        <div class="swiper big-swiper">
+    <div class="container-big">
+        <div class="big-swiper">
             <div class="texts-container">
                 <div id="firstText" class="text-container active-text">
                     <h3 class="text-title"><span>1</span><span>Нативный пост</span></h3>
@@ -104,18 +116,18 @@
                     <div class="text-descr">Выбирают размер и <br> делают заказ в магазине</div>
                 </div>
             </div>
-            <div class="swiper-pagination swiper-pagination-class"></div>
+            <div class="swiper-pagination-class"></div>
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
+                <div class="swiper-big-slide">
                     <img class='img-gif-slider'src="https://static.tildacdn.com/tild3739-3434-4135-b437-386465313438/01-min.gif" alt="img">
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-big-slide">
                     <img class='img-gif-slider' src="https://static.tildacdn.com/tild3962-3331-4063-b961-653136663439/02-min.gif" alt="img">
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-big-slide">
                     <img class='img-gif-slider' src="https://static.tildacdn.com/tild3834-3465-4634-a339-643636346530/03-min.gif"" alt="img">
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-big-slide">
                     <img class='img-gif-slider' src="https://static.tildacdn.com/tild6364-3833-4839-b836-646534613233/04-min.gif" alt="img">
                 </div>
             </div>    
@@ -125,18 +137,13 @@
     <script type="module">
         import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
 
-        const swiper = new Swiper('.swiper', {
+        const swiper = new Swiper('.big-swiper', {
             pagination: {
-                el: '.swiper-pagination',
+                el: '.swiper-pagination-class',
                 clickable: true,
                 modifierClass: '.swiper-pagination-class'
             },
-
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-
+            slideClass: 'swiper-big-slide',
             centeredSlides: true,
             longSwipes: false,
             spaceBetween: 15
